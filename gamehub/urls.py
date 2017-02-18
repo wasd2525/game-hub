@@ -17,7 +17,7 @@ urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),
     url(r'^chat.html$', views.chat, name='chat'),
     url(r'^login/$', auth_views.login, name='login'),
-    url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
+    url(r'^logout/$', auth_views.logout, {'next_page': '/login'}, name='logout'),
 
 
 ]
