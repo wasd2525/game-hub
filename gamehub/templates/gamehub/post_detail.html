@@ -66,7 +66,7 @@
                    
                     <div class="carousel-inner">
                       <div class="item active">
-                        <img src="{{ post.image }}" alt="">
+                        
                        
                       </div>
                       
@@ -87,10 +87,6 @@
              <a style="background-color:#5299f5; color:white;" class="btn" href="{% url 'add_comment_to_post' pk=post.pk %}">הוסף תגובה</a>
     
         
-        
-
-      
-      
  <hr>
 {% for comment in post.comments.all %}
     <div style="margin-left:-2px;" class="comment">
