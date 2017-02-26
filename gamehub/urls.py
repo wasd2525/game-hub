@@ -14,10 +14,25 @@ urlpatterns = [
     )),
     url(r'^accounts/', include('django.contrib.auth.urls')),
 
-    url(r'^$', views.post_list, name='post_list'),
+    #clash
+    url(r'^clash$', views.clash, name='clash'),
     url(r'^chat.html$', views.chat, name='chat'),
-    url(r'^login/$', auth_views.login, name='login'),
-    url(r'^logout/$', auth_views.logout, {'next_page': '/login'}, name='logout'),
 
+
+
+
+    #playstation
+    url(r'^play$', views.play, name='play'),
+    url(r'^play.html$', views.chat1, name='chat1'),
+
+    #General
+    url(r'^login/$', auth_views.login, name='login'),
+    url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
+    url(r'^$', views.home, name='home'),
+
+    url(r'^post/(?P<pk>\d+)/comment/$', views.add_comment_to_post, name='add_comment_to_post'),
+
+    url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
+    url(r'^post/new/$', views.post_new, name='post_new'),
 
 ]

@@ -1,0 +1,72 @@
+{% load staticfiles %}
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="theme-color" content="#141619">
+  <link rel="shortcut icon" href="https://s3.amazonaws.com/sendbird-static/favicon/favicon.ico" type="image/x-icon">
+
+  <link href='https://fonts.googleapis.com/css?family=Exo+2:400,900italic,900,800italic,800,700italic,700,600italic,600,500italic,500,400italic,300italic,200italic,200,100italic,100,300'
+        rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,900italic,900,800italic,800,700italic,700,600italic,600,500italic,500,400italic,300italic,200italic,200,100italic,100,300'
+        rel='stylesheet' type='text/css'>
+         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+  <link href="css/helpers.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/helpers.min.css' %}">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'> 
+
+  <link rel="stylesheet" href="static/bootstrap/bootstrap.min.css" >
+<link rel="stylesheet" href="{% static 'css/sample-chat.css' %}">
+
+  <title>Game Hub</title>
+  
+</head>
+<body>
+
+
+       <div class="chat-top">
+
+      <h1 style="text-align: center; font-family: Lobster; color:black">Game Hub</h1>
+
+        </div>
+
+      <!-- channel empty -->
+
+      <div style="margin-top:30px; margin-left:21%" class="col-lg-7">
+            <div class="panel panel-default panel-post">
+              <div style="margin-left: 40px; margin-right: 20px">
+                {% block content %}
+                  <center><h2 style="margin-top:25px">פוסט חדש</h2></center>
+                    <form style="margin-top:25px" method="POST" class="post-form">{% csrf_token %}
+                      {{ form.as_p }}
+              <center><button style="width:50%" type="submit" class="btn btn-primary btn-lg btn btn-shadow">שמירה</button></center>
+            </form>
+    {% endblock %}
+    </div>
+      
+      </div></div>
+
+
+         
+        
+        
+    
+
+
+
+</body>
+</html>

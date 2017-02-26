@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from gameforest.yakuzi.eu/forum-post.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 26 May 2016 13:17:19 GMT -->
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="theme-color" content="#141619">
+
+	<title>Gameforest - Responsive Gaming HTML Theme</title>
+	
+	<!-- FAVICON -->
+	<link rel="shortcut icon" href="img/favicon.ico">
+	
+	<!-- CORE CSS -->
+	<link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/theme.min.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet"> 
+	<link href="css/helpers.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'> 
+    
+	<!-- PLUGINS -->
+	<link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="plugins/ionicons/css/ionicons.min.css" rel="stylesheet">
+	<link href="plugins/animate/animate.min.css" rel="stylesheet">
+	<link href="plugins/animate/animate.delay.css" rel="stylesheet">
+	<link href="plugins/summernote/summernote.css" rel="stylesheet">
+</head>
+
+
+		{% block content %}
+		<section class="bg-grey-50 padding-bottom-60">
+			<div class="container">
+				
+				
+
+				
+				
+				<div class="forum-post">
+					<div class="forum-panel">
+						<div class="forum-user">
+						    <h1>New comment</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Send</button>
+    </form>
+
+					</div>
+				</div>
+				</section>
+			{% endblock %}	
+</body>
+
+<!-- Mirrored from gameforest.yakuzi.eu/forum-post.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 26 May 2016 13:17:19 GMT -->
+</html>

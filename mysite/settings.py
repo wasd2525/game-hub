@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
+from django.conf.global_settings import TEMPLATES
 
 import os
 
@@ -38,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gamehub',
+    'el_pagination',
+    
 ]
 
 MIDDLEWARE = [
@@ -63,6 +66,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
+
+                
             ],
         },
     },
@@ -108,13 +114,17 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
+
+
 USE_I18N = True
 
 USE_L10N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = 'post_list' 
+
+LOGIN_REDIRECT_URL = 'clash' 
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/

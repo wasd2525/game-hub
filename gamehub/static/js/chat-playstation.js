@@ -1,5 +1,5 @@
 
-var appId = 'A25013B5-5675-440A-9A4F-86E8AF87F698';
+var appId = '3EB7C152-7B80-4E56-8372-476F344BDDC4';
 var currScrollHeight = 0;
 var MESSAGE_TEXT_HEIGHT = 27;
 
@@ -698,23 +698,23 @@ function updateGroupChannelLastMessage(message){
     if (calcSeconds < 60) {
       parsedValue = parseInt(calcSeconds);
       if (parsedValue == 1) {
-        lastMessageDateString = parsedValue + ' sec ago';
+        lastMessageDateString = parsedValue + ' שניות';
       } else {
-        lastMessageDateString = parsedValue + ' secs ago';
+        lastMessageDateString = parsedValue + ' שניות';
       }
     } else if (calcSeconds / 60 < 60) {
       parsedValue = parseInt(calcSeconds/60);
       if (parsedValue == 1) {
-        lastMessageDateString = parsedValue + ' min ago';
+        lastMessageDateString = parsedValue + ' דקות';
       } else {
-        lastMessageDateString = parsedValue + ' mins ago';
+         lastMessageDateString = parsedValue + ' דקות';
       }
     } else if (calcSeconds / (60*60) < 24) {
       parsedValue = parseInt(calcSeconds / (60*60));
       if (parsedValue == 1) {
-        lastMessageDateString = parsedValue + ' hour ago';
+        lastMessageDateString = parsedValue + ' שעות';
       } else {
-        lastMessageDateString = parsedValue + ' hours ago';
+        lastMessageDateString = parsedValue + ' שעות';
       }
     } else {
       parsedValue = parseInt(calcSeconds/(60*60*24));
@@ -1217,7 +1217,7 @@ function startSendBird(userId, nickName) {
 
   ChannelHandler.onUserLeft = function (channel, user) {
     console.log('ChannelHandler.onUserLeft: ', channel, user);
-    setSysMessage({'message': '"' + user.nickname + '" user is left.'});
+    setSysMessage({'message': '"' + user.nickname + '" has left.'});
 
     if (channel.isGroupChannel()){
       groupChannelListMembersAndProfileImageUpdate(channel);

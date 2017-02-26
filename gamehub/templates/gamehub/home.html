@@ -1,0 +1,237 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="theme-color" content="#141619">
+  <link rel="shortcut icon" href="https://s3.amazonaws.com/sendbird-static/favicon/favicon.ico" type="image/x-icon">
+
+  <link href='https://fonts.googleapis.com/css?family=Exo+2:400,900italic,900,800italic,800,700italic,700,600italic,600,500italic,500,400italic,300italic,200italic,200,100italic,100,300'
+        rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,900italic,900,800italic,800,700italic,700,600italic,600,500italic,500,400italic,300italic,200italic,200,100italic,100,300'
+        rel='stylesheet' type='text/css'>
+         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+  <link href="css/helpers.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/helpers.min.css' %}">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'> 
+
+  <link rel="stylesheet" href="static/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/sample-chat.css' %}">
+
+  <title>Game Hub</title>
+  
+</head>
+<body>
+  <div class="init-check"></div>
+
+  <div class="sample-body">
+
+<!-- top -->
+      <div style="" class="chat-top">
+
+      <h1 style="text-align: center; font-family: Lobster; color:black">Game Hub</h1>
+
+        </div>
+    
+      <!--<div class="home-desc">
+        <div class="chat-empty chat-empty__tile">Game Hubברוכים הבאים ל</div>
+        <img src="{% static 'img/playstation.png' %}">
+        <div class="chat-empty chat-empty__desc">
+          !הצטרפו לקהילות כדי לדבר ולהכיר אנשים מאותם המשחקים בהם אתם משחקים</br>
+.אם אין לכם קהילה להצטרף אליה, צרו אחת משלכם עכשיו
+        </div>
+      </div>-->
+
+  <section style= class="bg-grey-50">
+      <div style="" class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-img">
+                <a href="/"><img src="{% static 'img/logo.jpg' %}" style="" alt=""></a>
+                <div class="meta"><a href="/"><i class="fa fa-heart-o"></i> <span></span></a></div>
+              </div>
+              <div class="caption">
+                <h3 style="text-align:right" class="card-title"><a href="/">אקס בוקס</a></h3>
+    
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xl-12">
+            <div class="card">
+              <div class="card-img">
+                <a href="/play"><img src="{% static 'img/logo_playstation.png' %}" alt=""></a>
+                <div class="meta"><a href="/play"><i class="fa fa-heart-o"></i> <span></span></a></div>
+              </div>
+              <div class="caption">
+                <h3 style="text-align:right" class="card-title"><a href="/play">פלייסטיישן</a></h3>
+            
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xl-12">
+            <div class="card">
+              <div class="card-img">
+                <a href="/clash"><img src="{% static 'img/clash.jpg' %}" alt=""></a>
+                <div class="meta"><a href="/clash"><i class="fa fa-heart-o"></i> <span></span></a></div>
+              </div>
+              <div class="caption">
+                <h3 style="text-align:right" class="card-title"><a href="/clash">קלאש רויאל</a></h3>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xl-12">
+            <div class="card">
+              <div class="card-img">
+                <a href="games-single.html"><img src="{% static 'img/steam.jpg' %}" alt=""></a>
+                <div class="meta"><a href="games-single.html"><i class="fa fa-heart-o"></i> <span></span></a></div>
+              </div>
+              <div class="caption">
+                <h3 style="text-align:right" class="card-title"><a href="games-single.html">סטים</a></h3>
+               
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-img">
+                <a href="games-single.html"><img src="img/game/4.jpg" alt=""></a>
+                <div class="meta"><a href="games-single.html"><i class="fa fa-heart-o"></i> <span>10</span></a></div>
+              </div>
+              <div class="caption">
+                <h3 class="card-title"><a href="games-single.html">Uncharted 4 Remastered</a></h3>
+               
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-img">
+                <a href="games-single.html"><img src="img/game/6.jpg" alt=""></a>
+                <div class="meta"><a href="games-single.html"><i class="fa fa-heart-o"></i> <span>15</span></a></div>
+              </div>
+              <div class="caption">
+                <h3 class="card-title"><a href="games-single.html">Deadpool The War</a></h3>
+               
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-img">
+                <a href="games-single.html"><img src="{% static 'img/lol.jpg' %}" alt=""></a>
+                <div class="meta"><a href="games-single.html"><i class="fa fa-heart-o"></i> <span></span></a></div>
+              </div>
+              <div class="caption">
+                <h3 class="card-title"><a href="games-single.html">League Of Legends</a></h3>
+                
+               
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-img">
+                <a href="games-single.html"><img src="img/game/8.jpg" alt=""></a>
+                <div class="meta"><a href="games-single.html"><i class="fa fa-heart-o"></i> <span>6</span></a></div>
+              </div>
+              <div class="caption">
+                <h3 class="card-title"><a href="games-single.html">Bioshock Infinite</a></h3>
+               
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-img">
+                <a href="games-single.html"><img src="img/game/9.jpg" alt=""></a>
+                <div class="meta"><a href="games-single.html"><i class="fa fa-heart-o"></i> <span>6</span></a></div>
+              </div>
+              <div class="caption">
+                <h3 class="card-title"><a href="games-single.html">Grand Theft Auto 5</a></h3>
+               
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-img">
+                <a href="games-single.html"><img src="img/game/11.jpg" alt=""></a>
+                <div class="category"><span class="label label-primary">PS4</span></div>
+                <div class="meta"><a href="games-single.html"><i class="fa fa-heart-o"></i> <span>32</span></a></div>
+              </div>
+              <div class="caption">
+                <h3 class="card-title"><a href="games-single.html">Alien Isolation</a></h3>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-img">
+                <a href="games-single.html"><img src="img/game/10.jpg" alt=""></a>
+                <div class="category"><span class="label label-warning">PC</span></div>
+                <div class="meta"><a href="games-single.html"><i class="fa fa-heart-o"></i> <span>10</span></a></div>
+              </div>
+              <div class="caption">
+                <h3 class="card-title"><a href="games-single.html">Walking Dead</a></h3>
+            
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-img">
+                <a href="games-single.html"><img src="img/game/12.jpg" alt=""></a>
+                <div class="category"><span class="label label-success">Xbox</span></div>
+                <div class="meta"><a href="games-single.html"><i class="fa fa-heart-o"></i> <span>15</span></a></div>
+              </div>
+              <div class="caption">
+                <h3 class="card-title"><a href="games-single.html">Hitman Absolution</a></h3>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+     <footer style="height:10px;" class="navbar-fixed-bottom">
+     
+        <p style="padding-bottom:20px">Place sticky footer content here.</p>
+      
+    </footer>
+
+  <!--<script src="/static/lib/SendBird.min.js"></script>-->
+  <!--<script src="/static/js/jquery-1.11.3.min.js"></script>-->
+  <!--<script src="/static/js/util.js"></script>-->
+  <!--<script src="/static/js/chat.js"></script>-->
+  <script src="static/lib/SendBird.min.js"></script>
+  <script src="static/js/jquery-1.11.3.min.js"></script>
+  <script src="static/js/util.js"></script>
+  
+
+</body>
+</html>

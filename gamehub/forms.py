@@ -2,6 +2,27 @@ import re
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 
+from django import forms
+
+from .models import Post, Comment
+
+
+
+class PostForm(forms.ModelForm):
+
+    class Meta:
+        model = Post
+        fields = ('title', 'text', 'image')
+
+class CommentForm(forms.ModelForm):
+
+    class Meta:
+        model = Comment
+        fields = ('text',)
+
+
+
+
 from django import forms 
 class RegistrationForm(forms.Form):
     username = forms.CharField(label='Username', max_length=30)
@@ -10,6 +31,8 @@ class RegistrationForm(forms.Form):
                           widget=forms.PasswordInput())
     password2 = forms.CharField(label='Password (Again)',
                         widget=forms.PasswordInput())
+
+
 def clean_password2(self):
         if 'password1' in self.cleaned_data:
             password1 = self.cleaned_data['password1']

@@ -12,7 +12,7 @@ input, button {
 .index-section {
   width: 624px;
   margin: auto;
-  /*height: 70px;*/
+  height: 100px
 }
 
 .index-top {
@@ -20,12 +20,12 @@ input, button {
 }
 
 .index-title {
-  color: #fff;
-  font-family: 'Exo 2';
-  font-weight: 200;
+  color: black;
+  
+  font-weight: 100;
   font-size: 26px;
+  line-height: 40px;
   margin: 0 0 0 6px;
-  line-height: 76px;
 }
 
 .text-sort {
@@ -105,7 +105,7 @@ input, button {
 }
 
 .index-button {
-  margin: 0 0 0 6px;
+  margin: 0 0 0 334px;
   width: 114px;
   height: 48px;
   -webkit-border-radius: 2px;
