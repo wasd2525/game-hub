@@ -51,7 +51,7 @@
               <div style="margin-left: 40px; margin-right: 20px">
                 {% block content %}
                   <center><h2 style="margin-top:25px">פוסט חדש</h2></center>
-                    <form style="margin-top:25px" method="POST" class="post-form">{% csrf_token %}
+                    <form style="margin-top:25px; width:100%" method="POST" class="post-form">{% csrf_token %}
                       {{ form.as_p }}
               <center><button style="width:50%" type="submit" class="btn btn-primary btn-lg btn btn-shadow">שמירה</button></center>
             </form>
