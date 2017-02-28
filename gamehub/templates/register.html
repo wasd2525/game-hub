@@ -1,9 +1,101 @@
-{% block title %}User Registration{% endblock %}
-{% block head %}User Registration{% endblock %}
-{% block content %}
-<form method="post" action=".">
-{{ form.as_p }}
-<input type="submit" value="register" />
-{% csrf_token %}
-</form>
-{% endblock %}
+{% load staticfiles %}
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="theme-color" content="#141619">
+  <link rel="shortcut icon" href="https://s3.amazonaws.com/sendbird-static/favicon/favicon.ico" type="image/x-icon">
+
+  <link href='https://fonts.googleapis.com/css?family=Exo+2:400,900italic,900,800italic,800,700italic,700,600italic,600,500italic,500,400italic,300italic,200italic,200,100italic,100,300'
+        rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,900italic,900,800italic,800,700italic,700,600italic,600,500italic,500,400italic,300italic,200italic,200,100italic,100,300'
+        rel='stylesheet' type='text/css'>
+         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+  <link href="css/helpers.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/helpers.min.css' %}">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'> 
+
+  <link rel="stylesheet" href="static/bootstrap/bootstrap.min.css" >
+<link rel="stylesheet" href="{% static 'css/sample-chat.css' %}">
+
+  <title>Game Chat</title>
+  
+</head>
+<body>
+ 
+      <!-- modal-bg -->
+     <a href="{% url 'home' %}">
+ <div class="chat-top">
+
+      <h1 style="text-align: center; font-family: Lobster; color:black">Game Chat</h1>
+
+        </div>
+     </a>
+
+{% block content %}   
+  
+
+        <!-- wrapper -->
+	<div id="wrapper">	
+		<section class="hero hero-panel" style="background-image: url({% static 'img/ps.jpg' %});">
+			<div class="hero-bg"></div>
+			<div class="container relative">
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pull-none margin-auto">
+						<div class="panel panel-default panel-login">
+							<div class="panel-heading">
+								<h3 class="panel-title"><i class="fa fa-users"></i> Register to GameChat</h3>
+							</div>
+							<div class="panel-body">
+														
+								<form method="post" action=".">
+									<div style="text-align:right"class="form-group input-icon-left">
+										<i style="margin-top:32px" class="glyphicon glyphicon-user"></i>
+										<p style="color:black"><label for="id_username">:שם משתמש</label> <input class="form-control" autofocus="" id="id_username" maxlength="150" name="username" type="text" value="" required=""> <span style="text-align:right" class="helptext">.חובה שם בלי רווחים, עם 8 אותיות או יותר</span></p>
+									</div>
+									<div style="text-align:right" class="form-group input-icon-left">
+										<i style="margin-top:32px" class="glyphicon glyphicon-lock"></i>
+										<p style="color:black"><label for="id_password1">:סיסמה</label> <input class="form-control" id="id_password1" name="password1" type="password" required=""></p>
+									</div>
+									<div style="text-align:right" class="form-group input-icon-left">
+										<i style="margin-top:32px" class="glyphicon glyphicon-lock"></i>
+										<p style="color:black"><label for="id_password2">:אימות סיסמה</label> <input class="form-control" id="id_password2" name="password2" type="password" required=""> <span class="helptext">!חובה סיסמה עם אותיות ומספרים</span></p>
+									</div>
+																		
+									<input type="submit" value="הרשם" class="btn btn-primary btn-block"/>
+								
+									{% csrf_token %}
+
+
+								</form>
+							</div>
+							<div style="text-align:right" class="panel-footer">
+								!כבר יש לך משתמש? <a href="{% url 'login' %}">התחל עכשיו</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- /#wrapper -->
+	
+
+
+
+ {% endblock %}
+</body>
+</html>

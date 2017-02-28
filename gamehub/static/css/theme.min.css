@@ -201,7 +201,7 @@ label{margin-bottom:10px;font-weight:500}
 .panel-default>.panel-heading{color:rgba(0,0,0,0.6);background-color:#FFF;border-color:rgba(0,0,0,0.1)}
 .panel-default>.panel-footer{background-color:#FFF;border-color:rgba(0,0,0,0.1)}
 .panel-default{border:1px solid #e4e4e4;-webkit-box-shadow:0 2px 3px 0 rgba(0,0,0,0.05);box-shadow:0 2px 3px 0 rgba(0,0,0,0.05)}
-.panel-title{font-size:15px;border-radius:0;-webkit-border-radius:0;padding:5px 0}
+.panel-title{font-size:20px;border-radius:0;-webkit-border-radius:0; text-align:center;}
 .panel-title i{margin-right:10px}
 .panel-title a,.panel-title a:hover,.panel-title a:focus{color:rgba(0,0,0,0.6);padding:7px 10px;display:block}
 .panel-body{padding:20px;font-size:14px}
@@ -211,7 +211,7 @@ label{margin-bottom:10px;font-weight:500}
 .panel-login .panel-title{padding:13px 5px;font-size:17px;font-weight:500!important}
 .panel-login .panel-title i{margin-left:5px}
 .panel-login .panel-body{padding:30px}
-.panel-login .panel-body a{color:#777a80}
+.panel-login .panel-body a{color:black}
 .panel-login .panel-footer{padding:15px 30px;font-size:14px}
 .panel-login .panel-footer a{font-weight:500}
 .panel-login .checkbox{margin-bottom:0}

@@ -66,7 +66,7 @@ $(document).on('click', '.chat-canvas__list-name', function(e){
     return;
   }
 
-  modalConfirm('Are you Sure?', 'Do you want to block this user?', function(){
+  modalConfirm('?האם אתם בטוחים', '?האם ברצונך לחסום את המשתמש הזה', function(){
     sb.blockUserWithUserId(userId, function(response, error){
       console.log(response, error);
     });
@@ -80,7 +80,7 @@ $(document).on('click', '.chat-canvas__list-text', function(e){
   var channelUrl = currChannelInfo.url;
   var messageObject = $(this);
 
-  modalConfirm('Are you Sure?', 'Do you want to delete message?', function(){
+  modalConfirm('?האם אתם בטוחים', 'Do you want to delete message?', function(){
     currChannelInfo.deleteMessage(channelMessageList[channelUrl][messageId]['message'], function(response, error){
       if (!error) {
         delete(channelMessageList[channelUrl][messageId]);
@@ -293,9 +293,9 @@ function leaveChannel(channel, obj) {
   leaveChannelUrl = channel['channel_url'];
 
   if($('.chat-top__button-invite').is(':visible')) {
-    $('.modal-leave-channel-desc').html('Do you want to leave this messaging channel?');
+    $('.modal-leave-channel-desc').html('?האם ברצונך לעזוב את הקבוצה');
   } else {
-    $('.modal-leave-channel-desc').html('Do you want to leave this channel?');
+    $('.modal-leave-channel-desc').html('?האם ברצונך לעזוב את הקבוצה');
   }
 
   $('.modal-leave-channel').show();
@@ -923,7 +923,7 @@ function joinGroupChannel(channelUrl, callback) {
 function endMessaging(channel, obj) {
   popupInit();
   leaveMessagingChannelUrl = channel.url;
-  $('.modal-leave-channel-desc').html('Do you want to leave this messaging channel?');
+  $('.modal-leave-channel-desc').html('?האם ברצונך לעזוב את הקבוצה');
   $('.modal-leave-channel').show();
   return false;
 }

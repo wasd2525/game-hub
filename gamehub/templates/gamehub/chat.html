@@ -32,7 +32,7 @@
   <link rel="stylesheet" href="static/bootstrap/bootstrap.min.css" >
 <link rel="stylesheet" href="{% static 'css/sample-chat.css' %}">
 
-  <title>Game Hub</title>
+  <title>Game Chat</title>
   
 </head>
 <body>
@@ -41,8 +41,8 @@
   <div class="sample-body">
 
     <!-- left nav -->
-    <div style="float:right" class="left-nav">
-      <a href="/" target="_top"><h1 style="text-align: center; font-family: Lobster">Game Hub</h1></a>
+    <div style="float:right; position:static" class="left-nav">
+      <a href="/" target="_top"><h1 style="text-align: center; font-family: Lobster">Game Chat</h1></a>
       <div class="left-nav-channel-select">
         <button style="padding-right:10px" type="button" class="left-nav-button left-nav-open" id="btn_open_chat">
           כניסה לסרבר
@@ -68,10 +68,11 @@
 
       </div>
 
-<a href="/logout">
+
 
       <div style="margin-top:-80" class="left-nav-channel-select">
-        <button style="padding-right: 12px" type="button" class="left-nav-button left-nav-logout">
+        <a href="/logout">
+        <button style="padding-right: 12px" type="button" data-toggle="modal" data-target=".bs-modal-sm" class="left-nav-button left-nav-logout">
           יציאה
           
         </button>
@@ -150,7 +151,7 @@
                       <h3 style="text-align:center"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
                       <ul style="text-align:center" class="post-meta">
                         <li><a href="#"><i class="glyphicon glyphicon-user"></i>{{ post.author }}</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-comment"></i>{{ post.comments.count }} <span class="hidden-xs">Comments</span></a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span style="text-align:right" class="hidden-xs"><span style="color:white; font-size:1">ת</span>  {{ post.comments.count }} תגובות</span></a></li>
                         <li><i class="glyphicon glyphicon-calendar"></i>{{ post.published_date }}</li>
                         
                       </ul>
@@ -236,7 +237,7 @@
       <div class="modal-messaging-more">MORE<div class="modal-messaging-more__icon"></div></div>
     </div>
     <div class="modal-messaging-bottom">
-      <button type="button" class="modal-messaging-bottom__button" onclick="startMessaging()">START MESSAGE</button>
+      <button type="button" class="modal-messaging-bottom__button" onclick="startMessaging()">התחל</button>
     </div>
   </div>
   <div class="modal-member">
@@ -260,12 +261,12 @@
 
   <div class="modal-leave-channel">
     <div class="modal-leave-channel-card">
-      <div class="modal-leave-channel-title">Are you Sure?</div>
-      <div class="modal-leave-channel-desc">Do you want to leave this channel?</div>
+      <div style="text-align:right" class="modal-leave-channel-title">?האם אתם בטוחים</div>
+      <div style="text-align:right" class="modal-leave-channel-desc">Do you want to leave this channel?</div>
       <div class="modal-leave-channel-separator"></div>
       <div class="modal-leave-channel-bottom">
-        <button type="button" class="modal-leave-channel-button modal-leave-channel-close">CANCEL</button>
-        <button type="button" class="modal-leave-channel-button modal-leave-channel-submit">YES</button>
+        <button type="button" class="modal-leave-channel-button modal-leave-channel-close">לא</button>
+        <button type="button" class="modal-leave-channel-button modal-leave-channel-submit">כן</button>
       </div>
     </div>
   </div>

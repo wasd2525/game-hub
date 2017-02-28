@@ -1201,10 +1201,19 @@ label.chat-input-file.file-upload {
   border-radius: 2px;
 }
 
+.index-title {
+  color: black;
+  font-weight: 100;
+  font-size: 26px;
+  line-height: 40px;
+  margin: 0 0 0 6px;
+}
+
 .modal-leave-channel-close, .modal-hide-channel-close, .modal-confirm-close, .modal-input-close {
   color: #60678b;
   border: 1px solid #abb8c4;
   background: #fafcff;
+  float:left;
 }
 .modal-leave-channel-close:hover, .modal-hide-channel-close:hover, .modal-confirm-close:hover, .modal-input-close:hover,
 .modal-leave-channel-close:focus, .modal-hide-channel-close:focus, .modal-confirm-close:focus, .modal-input-close:focus {
