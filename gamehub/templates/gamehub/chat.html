@@ -1,7 +1,7 @@
 {% load staticfiles %}
 
 
-<html lang="en">
+<html lang="he">
 <head>
   <meta charset="UTF-8">
 <meta charset="utf-8">
@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <html dir="rtl" lang="ar">
   <meta name="theme-color" content="#141619">
   <link rel="shortcut icon" href="https://s3.amazonaws.com/sendbird-static/favicon/favicon.ico" type="image/x-icon">
 
@@ -41,7 +42,7 @@
   <div class="sample-body">
 
     <!-- left nav -->
-    <div style="float:right; position:static" class="left-nav">
+    <div style="float:right; position:fixed" class="left-nav">
       <a href="/" target="_top"><h1 style="text-align: center; font-family: Lobster">Game Chat</h1></a>
       <div class="left-nav-channel-select">
         <button style="padding-right:10px" type="button" class="left-nav-button left-nav-open" id="btn_open_chat">
@@ -61,7 +62,7 @@
         <div class="left-nav-channel-section">
         <div style="text-align:right; font-size:15px" class="left-nav-channel-title">פתיחת צ'אט</div>
         <div style="text-align:right; padding-right: 10px" class="left-nav-channel-empty">התחל כדי לפתוח<br>חדר צ'אט</div>
-        <div id="open_channel_list"></div>
+        <div style="text-align:left" id="open_channel_list"></div>
 
         <div style="text-align:right; font-size:15px" class="left-nav-channel-title title-messaging">צ'אט קבוצתי</div>
         <div id="messaging_channel_list"></div>
@@ -150,9 +151,9 @@
                     <div style="padding-left:100px" class="post-title">
                       <h3 style="text-align:center"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
                       <ul style="text-align:center" class="post-meta">
-                        <li><a href="#"><i class="glyphicon glyphicon-user"></i>{{ post.author }}</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span style="text-align:right" class="hidden-xs"><span style="color:white; font-size:1">ת</span>  {{ post.comments.count }} תגובות</span></a></li>
-                        <li><i class="glyphicon glyphicon-calendar"></i>{{ post.published_date }}</li>
+                        <li><a href="#"><i class="glyphicon glyphicon-user"></i>  {{ post.author }}</a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span style="text-align:right" class="hidden-xs"><span style="color:white; font-size:1">   ת</span>   {{ post.comments.count }}   תגובות</span></a></li>
+                        <li><i class="glyphicon glyphicon-calendar"> </i> {{ post.published_date }}</li>
                         
                       </ul>
                     </div>
@@ -172,7 +173,7 @@
               </div>
               <div class="panel-footer">
                 <ul class="post-action">
-                  <li><a href="#"><i class="fa fa-heart"></i> like (5)</a></li>
+                  <li><a href="#"><i class="fa fa-heart"></i> נקודות:</a></li>
                   <li><a href="{% url 'post_detail' pk=post.pk %}"><i class="fa fa-comments"></i>תגובות</a></li>
 
 
@@ -199,7 +200,7 @@
             <input type="file" name="file" id="chat_file_input" style="display: none;">
           </label>
           <div class="chat-input-text">
-            <textarea class="chat-input-text__field" placeholder="!תכתבו משהו" disabled="true" autofocus></textarea>
+            <textarea class="chat-input-text__field" placeholder="תכתבו משהו!" disabled="true" autofocus></textarea>
           </div>
         </div>
         <label class="chat-input-typing"></label>
@@ -219,9 +220,9 @@
       <label class="modal-messaging-top__title">הודעות וכללי</label>
       
     </div>
-    <div class="modal-open-chat-list"></div>
+    <div style="margin-right:7px" class="modal-open-chat-list"></div>
     <div class="modal-open-chat-more">
-      <div class="modal-open-chat-more__text">MORE<div class="modal-open-chat-more__icon"></div></div>
+      <div class="modal-open-chat-more__text">עוד<div class="modal-open-chat-more__icon"></div></div>
     </div>
   </div>
 
@@ -230,18 +231,18 @@
       <label style="padding-left:190px"  class="modal-messaging-top__title">משתמשים</label>
       <label style="float:right" class="modal-messaging-top__desc">רשימת משתמשים מחוברים</label>
     </div>
-    <div class="modal-messaging-list">
-      <div class="modal-messaging-list__item">Username1<div class="modal-messaging-list__icon"></div></div>
-      <div class="modal-messaging-list__item">Username2<div class="modal-messaging-list__icon modal-messaging-list__icon--select"></div></div>
+    <div style="float:left" class="modal-messaging-list">
+      <div class="modal-messaging-list__item"> Username1 <div style="margin-left:10px" class="modal-messaging-list__icon"></div></div>
+      <div class="modal-messaging-list__item"> Username2 <div style="margin-left:10px"  class="modal-messaging-list__icon modal-messaging-list__icon--select"></div></div>
 
-      <div class="modal-messaging-more">MORE<div class="modal-messaging-more__icon"></div></div>
+      <div class="modal-messaging-more">עוד<div class="modal-messaging-more__icon"></div></div>
     </div>
     <div class="modal-messaging-bottom">
       <button type="button" class="modal-messaging-bottom__button" onclick="startMessaging()">התחל</button>
     </div>
   </div>
   <div class="modal-member">
-    <div class="modal-member-title">CURRENT MEMBER LIST</div>
+    <div style="text-align:right" class="modal-member-title">רשימת משתמשים</div>
     <div class="modal-member-list"></div>
   </div>
 

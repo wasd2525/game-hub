@@ -1,5 +1,7 @@
 {% load staticfiles %}
-<html lang="en">
+
+
+<html lang="he">
 <head>
   <meta charset="UTF-8">
 <meta charset="utf-8">
@@ -7,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <html dir="rtl" lang="ar">
   <meta name="theme-color" content="#141619">
   <link rel="shortcut icon" href="https://s3.amazonaws.com/sendbird-static/favicon/favicon.ico" type="image/x-icon">
 
@@ -18,6 +21,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
 
 <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
@@ -26,7 +30,7 @@
   <link rel="stylesheet" href="{% static 'css/helpers.min.css' %}">
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'> 
 
-  <link rel="stylesheet" href="static/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="static/bootstrap/bootstrap.min.css" >
 <link rel="stylesheet" href="{% static 'css/sample-chat.css' %}">
 
   <title>Game Chat</title>
@@ -37,8 +41,8 @@
 
   <div class="sample-body">
 
-     <!-- left nav -->
-    <div style="float:right" class="left-nav">
+    <!-- left nav -->
+    <div style="float:right; position:fixed" class="left-nav">
       <a href="/" target="_top"><h1 style="text-align: center; font-family: Lobster">Game Chat</h1></a>
       <div class="left-nav-channel-select">
         <button style="padding-right:10px" type="button" class="left-nav-button left-nav-open" id="btn_open_chat">
@@ -65,10 +69,11 @@
 
       </div>
 
-<a href="/logout">
+
 
       <div style="margin-top:-80" class="left-nav-channel-select">
-        <button style="padding-right: 12px" type="button" class="left-nav-button left-nav-logout">
+        <a href="/logout">
+        <button style="padding-right: 12px" type="button" data-toggle="modal" data-target=".bs-modal-sm" class="left-nav-button left-nav-logout">
           יציאה
           
         </button>
@@ -89,9 +94,8 @@
     </div> <!-- // end left nav -->
 
 
-
     <!-- chat section -->
-    <div class="right-section">
+    <div style="display:block"class="right-section">
       <!-- modal-bg -->
       <div class="right-section__modal-bg"></div>
 
@@ -122,11 +126,17 @@
         </div>
       </div>
 
-    <!-- channel empty -->
+            
+           
+    
+
+      <!-- channel empty -->
 
      <div class="chat-empty">
        <div class="container">
-     
+     {% load el_pagination_tags %}
+
+{% lazy_paginate posts %}
 
          {% for post in posts %}
    
@@ -141,9 +151,9 @@
                     <div style="padding-left:100px" class="post-title">
                       <h3 style="text-align:center"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
                       <ul style="text-align:center" class="post-meta">
-                        <li><a href="#"><i class="glyphicon glyphicon-user"></i>{{ post.author }}</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-comment"></i>{{ post.comments.count }} <span class="hidden-xs">Comments</span></a></li>
-                        <li><i class="glyphicon glyphicon-calendar"></i>{{ post.published_date }}</li>
+                        <li><a href="#"><i class="glyphicon glyphicon-user"></i>  {{ post.author }}</a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span style="text-align:right" class="hidden-xs"><span style="color:white; font-size:1">   ת</span>   {{ post.comments.count }}   תגובות</span></a></li>
+                        <li><i class="glyphicon glyphicon-calendar"> </i> {{ post.published_date }}</li>
                         
                       </ul>
                     </div>
@@ -152,6 +162,7 @@
                    
                     <div class="carousel-inner">
                       <div class="item active">
+                        
                        
                       </div>
                       
@@ -162,8 +173,10 @@
               </div>
               <div class="panel-footer">
                 <ul class="post-action">
-                  <li><a href="#"><i class="fa fa-heart"></i> like (5)</a></li>
-                  <li><a href="#"><i class="fa fa-comments"></i>תגובות</a></li>
+                  <li><a href="#"><i class="fa fa-heart"></i> נקודות:</a></li>
+                  <li><a href="{% url 'post_detail' pk=post.pk %}"><i class="fa fa-comments"></i>תגובות</a></li>
+
+
                   <li><a href="#"><i class="fa fa-reply"></i> share</a></li>
                 </ul>
               </div>
@@ -173,6 +186,7 @@
       </div>
  
   {% endfor %}
+  {% show_pages %}
 </div>
 </div>
 
@@ -186,7 +200,7 @@
             <input type="file" name="file" id="chat_file_input" style="display: none;">
           </label>
           <div class="chat-input-text">
-            <textarea class="chat-input-text__field" placeholder="!תכתבו משהו" disabled="true" autofocus></textarea>
+            <textarea class="chat-input-text__field" placeholder="תכתבו משהו!" disabled="true" autofocus></textarea>
           </div>
         </div>
         <label class="chat-input-typing"></label>
@@ -195,19 +209,20 @@
     </div> <!-- // end chat section -->
 
   </div>
+
   <!-----------------------
             modal
   ------------------------>
 
 
-<div class="modal-open-chat">
+   <div class="modal-open-chat">
     <div class="modal-messaging-top">
       <label class="modal-messaging-top__title">הודעות וכללי</label>
       
     </div>
-    <div class="modal-open-chat-list"></div>
+    <div style="margin-right:7px" class="modal-open-chat-list"></div>
     <div class="modal-open-chat-more">
-      <div class="modal-open-chat-more__text">MORE<div class="modal-open-chat-more__icon"></div></div>
+      <div class="modal-open-chat-more__text">עוד<div class="modal-open-chat-more__icon"></div></div>
     </div>
   </div>
 
@@ -216,18 +231,18 @@
       <label style="padding-left:190px"  class="modal-messaging-top__title">משתמשים</label>
       <label style="float:right" class="modal-messaging-top__desc">רשימת משתמשים מחוברים</label>
     </div>
-    <div class="modal-messaging-list">
-      <div class="modal-messaging-list__item">Username1<div class="modal-messaging-list__icon"></div></div>
-      <div class="modal-messaging-list__item">Username2<div class="modal-messaging-list__icon modal-messaging-list__icon--select"></div></div>
+    <div style="float:left" class="modal-messaging-list">
+      <div class="modal-messaging-list__item"> Username1 <div style="margin-left:10px" class="modal-messaging-list__icon"></div></div>
+      <div class="modal-messaging-list__item"> Username2 <div style="margin-left:10px"  class="modal-messaging-list__icon modal-messaging-list__icon--select"></div></div>
 
-      <div class="modal-messaging-more">MORE<div class="modal-messaging-more__icon"></div></div>
+      <div class="modal-messaging-more">עוד<div class="modal-messaging-more__icon"></div></div>
     </div>
     <div class="modal-messaging-bottom">
-      <button type="button" class="modal-messaging-bottom__button" onclick="startMessaging()">START MESSAGE</button>
+      <button type="button" class="modal-messaging-bottom__button" onclick="startMessaging()">התחל</button>
     </div>
   </div>
   <div class="modal-member">
-    <div class="modal-member-title">CURRENT MEMBER LIST</div>
+    <div style="text-align:right" class="modal-member-title">רשימת משתמשים</div>
     <div class="modal-member-list"></div>
   </div>
 
@@ -247,12 +262,12 @@
 
   <div class="modal-leave-channel">
     <div class="modal-leave-channel-card">
-      <div class="modal-leave-channel-title">Are you Sure?</div>
-      <div class="modal-leave-channel-desc">Do you want to leave this channel?</div>
+      <div style="text-align:right" class="modal-leave-channel-title">?האם אתם בטוחים</div>
+      <div style="text-align:right" class="modal-leave-channel-desc">Do you want to leave this channel?</div>
       <div class="modal-leave-channel-separator"></div>
       <div class="modal-leave-channel-bottom">
-        <button type="button" class="modal-leave-channel-button modal-leave-channel-close">CANCEL</button>
-        <button type="button" class="modal-leave-channel-button modal-leave-channel-submit">YES</button>
+        <button type="button" class="modal-leave-channel-button modal-leave-channel-close">לא</button>
+        <button type="button" class="modal-leave-channel-button modal-leave-channel-submit">כן</button>
       </div>
     </div>
   </div>
@@ -295,6 +310,8 @@
       </div>
     </div>
   </div>
+
+  
   <!-----------------------
         // END modal
   ------------------------>
