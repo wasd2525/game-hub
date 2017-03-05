@@ -107,7 +107,7 @@
 
         <div class="chat-top__title"></div>
         <div class="chat-top-button">
-          <div class="chat-top__button chat-top__button-invite">INVITE</div>
+          <div class="chat-top__button chat-top__button-invite">הזמן</div>
           <div class="modal-guide-user">
             הזמינו עוד
           </div>
@@ -152,7 +152,7 @@
                       <h3 style="text-align:center"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
                       <ul style="text-align:center" class="post-meta">
                         <li><a href="#"><i class="glyphicon glyphicon-user"></i>  {{ post.author }}</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span style="text-align:right" class="hidden-xs"><span style="color:white; font-size:1">   ת</span>   {{ post.comments.count }}   תגובות</span></a></li>
+                        <li><a href="{% url 'post_detail' pk=post.pk %}"><i class="glyphicon glyphicon-comment"></i><span style="text-align:right" class="hidden-xs"><span style="color:white; font-size:1">   ת</span>   {{ post.comments.count }}   תגובות</span></a></li>
                         <li><i class="glyphicon glyphicon-calendar"> </i> {{ post.published_date }}</li>
                         
                       </ul>
@@ -256,7 +256,7 @@
 
     </div>
     <div class="modal-invite-bottom">
-      <button type="button" class="modal-invite-bottom__button" onclick="inviteMember()">INVITE</button>
+      <button type="button" class="modal-invite-bottom__button" onclick="inviteMember()">הזמן</button>
     </div>
   </div>
 

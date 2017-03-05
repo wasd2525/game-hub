@@ -114,7 +114,7 @@
 
         <div class="chat-top__title"></div>
         <div class="chat-top-button">
-          <div class="chat-top__button chat-top__button-invite">INVITE</div>
+          <div class="chat-top__button chat-top__button-invite">הזמן</div>
           <div class="modal-guide-user">
             הזמינו עוד
           </div>
@@ -159,7 +159,7 @@
                       <h3 style="text-align:center"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
                       <ul style="text-align:center" class="post-meta">
                         <li><a href="#"><i class="glyphicon glyphicon-user"></i>  {{ post.author }}</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span style="text-align:right" class="hidden-xs"><span style="color:white; font-size:1">   ת</span>   {{ post.comments.count }}   תגובות</span></a></li>
+                        <li><a href="{% url 'post_detail' pk=post.pk %}"><i class="glyphicon glyphicon-comment"></i><span style="text-align:right" class="hidden-xs"><span style="color:white; font-size:1">   ת</span>   {{ post.comments.count }}   תגובות</span></a></li>
                         <li><i class="glyphicon glyphicon-calendar"> </i> {{ post.published_date }}</li>
                         
                       </ul>
@@ -256,16 +256,16 @@
   </div>
 
   <div class="modal-invite">
-    <div class="modal-invite-title">USER LIST</div>
+    <div class="modal-invite-title">רשימת משתמשים</div>
     <div class="modal-invite-top">
-      <label class="modal-messaging-top__title modal-invite-top__title">Group Channel</label>
-      <label class="modal-invite-top__desc">Member list shows people inside the application.</label>
+      <label class="modal-messaging-top__title modal-invite-top__title">צ'אט קבוצתי</label>
+      <label class="modal-invite-top__desc">הזמינו כמה משתמשים ולחצו 'הזמן'</label>
     </div>
     <div class="modal-messaging-list modal-invite-list">
 
     </div>
     <div class="modal-invite-bottom">
-      <button type="button" class="modal-invite-bottom__button" onclick="inviteMember()">INVITE</button>
+      <button type="button" class="modal-invite-bottom__button" onclick="inviteMember()">הזמן</button>
     </div>
   </div>
 
@@ -319,6 +319,7 @@
       </div>
     </div>
   </div>
+
 
   
   <!-----------------------

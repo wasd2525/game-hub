@@ -46,7 +46,7 @@
   <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
 </button></a>
         </div>
-     
+  
 
 {% block content %}   
   
@@ -61,7 +61,7 @@
                       <h3 style="text-align:center">{{ post.title }}</a></h3>
                       <ul style="text-align:center" class="post-meta">
                         <li><a href="#"><i class="glyphicon glyphicon-user"></i>{{ post.author }}</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-comment"></i>{{ post.comments.count }} <span class="hidden-xs">Comments</span></a></li>
+                         <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span style="text-align:right" class="hidden-xs"><span style="color:white; font-size:1">   ת</span>   {{ post.comments.count }}   תגובות</span></a></li>
                         <li><i class="glyphicon glyphicon-calendar"></i>{{ post.published_date }}</li>
                         
                       </ul>
@@ -77,6 +77,7 @@
                       
                     </div>
                   </div>
+
                   <p>{{ post.text|linebreaksbr }}</p>
                 </div>
               </div>
@@ -99,7 +100,10 @@
                   <h2 style="text-align:center;margin-bottom:-12">:תגובות</h2>
                       </div>
                        <hr>
-{% for comment in post.comments.all %}
+                            {% load el_pagination_tags %}
+
+{% paginate post.comments.all as comment %}
+{% for comment in comment %}
     <div style="margin-left:-2px;" class="comment">
         <strong>{{ comment.author }}:</strong>
         <p>{{ comment.text|linebreaks }}</p>
@@ -107,7 +111,10 @@
 {% empty %}
     <p>:אין תגובות כרגע</p>
 {% endfor %}
+ {% show_pages %}
+
   {% endblock %}
+   
                     </div>
                   </div>
                 </div>

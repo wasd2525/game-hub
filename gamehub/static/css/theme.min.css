@@ -873,7 +873,7 @@ section#video{height:760px;background-color:#0c0d0e}
 .error-404 form{margin:30px 0 10px 0}
 .comment-form{margin:40px 0 0 0}
 .comment-form .page-header{font-weight:600!important;border:0;display:inline-block;margin-bottom:25px;padding-left:0}
-.comments .page-header{border:0;padding-left:0;margin-bottom:10px}
+.comments .page-header{border:0;padding-left:0;margin-bottom:10px;float:right;}
 .comment-form .btn{margin-top:15px}
 .comments{margin-top:40px}
 .comments>.media{margin:15px 0 25px 0;padding:0;text-align:left}
