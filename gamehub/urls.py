@@ -18,8 +18,9 @@ urlpatterns = [
     url(r'^clash$', views.clash, name='clash'),
     url(r'^chat.html$', views.chat, name='chat'),
 
-
-
+    #steam
+    url(r'^steam$', views.steam, name='steam'),
+    url(r'^steam.html$', views.chat2, name='chat2'),
 
     #playstation
     url(r'^play$', views.play, name='play'),

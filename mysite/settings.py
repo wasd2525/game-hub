@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'gamehub',
     'el_pagination',
     
+    
 ]
 
 MIDDLEWARE = [

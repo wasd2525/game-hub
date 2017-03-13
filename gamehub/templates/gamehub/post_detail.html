@@ -1,7 +1,7 @@
 {% load staticfiles %}
 
 
-<html lang="en">
+<html lang="he">
 <head>
   <meta charset="UTF-8">
 <meta charset="utf-8">
@@ -100,7 +100,9 @@
                   <h2 style="text-align:center;margin-bottom:-12">:תגובות</h2>
                       </div>
                        <hr>
-                            {% load el_pagination_tags %}
+
+
+                          {% load el_pagination_tags %}
 
 {% paginate post.comments.all as comment %}
 {% for comment in comment %}
@@ -111,10 +113,16 @@
 {% empty %}
     <p>:אין תגובות כרגע</p>
 {% endfor %}
- {% show_pages %}
+ <h2 style="color:black; text-align:center; margin-bottom:10px">{% show_pages %}</h2>
 
   {% endblock %}
+
+                      
+
+
+
    
+
                     </div>
                   </div>
                 </div>

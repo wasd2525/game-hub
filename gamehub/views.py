@@ -8,7 +8,11 @@ from django.contrib.auth.models import User
 from .forms import PostForm, CommentForm
 from django.shortcuts import render, get_object_or_404
 
-# Create your views here.
+from infinite_scroll_pagination.paginator import SeekPaginator, EmptyPage
+
+
+
+
 
 #clash
 @login_required(login_url='login')
@@ -73,6 +77,26 @@ def chat1(request):
 	
 #end play
 
+#steam
+@login_required(login_url='login')
+def steam(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    if request.user.is_authenticated():
+        username = '/steam.html?userid=' + request.user.username + '&nickname=' + request.user.username
+    return redirect(username)
+
+@login_required(login_url='login')
+def chat2(request):
+	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+	username = '/steam.html?userid=&nickname=' + request.user.username
+
+	if request.user.is_authenticated():
+		return render(request, 'gamehub/steam.html', {'posts' : posts})
+
+	
+#end steam
+
+
 
 def add_comment_to_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -87,6 +111,35 @@ def add_comment_to_post(request, pk):
     else:
         form = CommentForm()
     return render(request, 'gamehub/add_comment_to_post.html', {'form': form})
+
+   
+def pagination_ajax(request, pk=None):
+    if not request.is_ajax():
+        return Http404()
+
+    if pk is not None:
+        # I'm doing an extra query because datetime serialization/deserialization is hard
+        date = timezone.now()
+    else:
+        # is requesting the first page
+        date = None
+
+    posts = Post.objects.all()
+    paginator = SeekPaginator(posts, per_page=5, lookup_field='date')
+
+    try:
+        page = paginator.page(value=date, pk=pk)
+    except EmptyPage:
+        data = {'error': "this page is empty", }
+    else:
+        posts_list = [{"title": a.title, } for a in page]
+        data = {'articles': posts_list,
+                'has_next': page.has_next(),
+                'pk': page.next_page_pk()}
+
+    return HttpResponse(json.dumps(data), content_type="application/json")
+
+
 
 def login(request):
 	return render(request, 'gamehub/login.html', {})
