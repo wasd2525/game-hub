@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 from .forms import PostForm, CommentForm
 from django.shortcuts import render, get_object_or_404
 
-from infinite_scroll_pagination.paginator import SeekPaginator, EmptyPage
+
 
 
 
