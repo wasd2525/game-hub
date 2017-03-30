@@ -7,10 +7,17 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField()
     image = models.ImageField(upload_to = 'static/img',blank=True, null=True)
+    category = models.ForeignKey('gamehub.Category', null=True)
+    slug = models.SlugField(max_length=100, db_index=True, default="Slug")
+
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
+
+
+    def __str__(self):
+        return self.catTitle
 
     def publish(self):
         self.published_date = timezone.now()
@@ -18,6 +25,15 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Category(models.Model):
+    catTitle = models.CharField(max_length=100, db_index=True, null=True)
+    slug = models.SlugField(max_length=100, db_index=True, default="Slug")
+
+
+    def __str__(self):
+        return self.catTitle
+
 
 
 class Comment(models.Model):

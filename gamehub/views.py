@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.utils import timezone
 from django.db import models
-from .models import Post
+from .models import Post, Category
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from django.contrib.auth.models import User
@@ -13,26 +13,32 @@ from django.shortcuts import render, get_object_or_404
 
 
 
-
 #clash
 @login_required(login_url='login')
 def clash(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     if request.user.is_authenticated():
         username = '/chat.html?userid=' + request.user.username + '&nickname=' + request.user.username
     return redirect(username)
 
 @login_required(login_url='login')
 def chat(request):
-	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-	username = '/chat.html?userid=&nickname=' + request.user.username
+    categories = Category.objects.all(),
+    posts = Post.objects.filter(category=1)
+    posts2 = Post.objects.filter(slug="Slug1")
+    username = '/chat.html?userid=&nickname=' + request.user.username
+    
+  
 
+    return render(request, 'gamehub/chat.html', {
+        'posts' : posts,
+        'posts2' : posts2,
+        
+    })
 
-	if request.user.is_authenticated():
-		return render(request, 'gamehub/chat.html', {'posts' : posts})
+   #end clash
 
-	if request.get_full_path != username:
-		return HttpResponseRedirect('/index/')
+    if request.get_full_path != username:
+        return HttpResponseRedirect('/index/')
 
 	 
 def post_new(request):
@@ -54,7 +60,6 @@ def post_detail(request, pk):
     return render(request, 'gamehub/post_detail.html', {'post': post})
 
 
-#end clash
 
 
 
@@ -68,14 +73,47 @@ def play(request):
 
 @login_required(login_url='login')
 def chat1(request):
-	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-	username = '/play.html?userid=&nickname=' + request.user.username
+    categories = Category.objects.all(),
+    posts = Post.objects.filter(category=3)
+    posts2 = Post.objects.filter(slug="Slug1")
+    username = '/play.html?userid=&nickname=' + request.user.username
+    
+  
 
-	if request.user.is_authenticated():
-		return render(request, 'gamehub/play.html', {'posts' : posts})
+    return render(request, 'gamehub/play.html', {
+        'posts' : posts,
+        'posts2' : posts2,
+        
+    })
+
 
 	
 #end play
+
+#Xbox
+@login_required(login_url='login')
+def xbox(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    if request.user.is_authenticated():
+        username = '/xbox.html?userid=' + request.user.username + '&nickname=' + request.user.username
+    return redirect(username)
+
+@login_required(login_url='login')
+def chat3(request):
+    categories = Category.objects.all(),
+    posts = Post.objects.filter(category=4)
+    posts2 = Post.objects.filter(slug="Slug1")
+    username = '/xbox.html?userid=&nickname=' + request.user.username
+
+    return render(request, 'gamehub/xbox.html', {
+        'posts' : posts,
+        'posts2' : posts2,
+        
+    })
+
+
+#end xbox
+
 
 #steam
 @login_required(login_url='login')
@@ -87,13 +125,17 @@ def steam(request):
 
 @login_required(login_url='login')
 def chat2(request):
-	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-	username = '/steam.html?userid=&nickname=' + request.user.username
+    categories = Category.objects.all(),
+    posts = Post.objects.filter(category=5)
+    posts2 = Post.objects.filter(slug="Slug1")
+    username = '/chat.html?userid=&nickname=' + request.user.username
 
-	if request.user.is_authenticated():
-		return render(request, 'gamehub/steam.html', {'posts' : posts})
+    return render(request, 'gamehub/steam.html', {
+        'posts' : posts,
+        'posts2' : posts2,
+        
+    })
 
-	
 #end steam
 
 
@@ -149,4 +191,5 @@ def register(request):
 
 def home(request):
 	return render(request, 'gamehub/home.html', {})
+
 

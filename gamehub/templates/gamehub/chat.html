@@ -48,6 +48,7 @@
 
   <div class="sample-body">
 
+
     <!-- left nav -->
     <div style="float:right; position:fixed" class="left-nav">
       <a href="/" target="_top"><h1 style="text-align: center; font-family: Lobster">Game Chat</h1></a>
@@ -133,25 +134,33 @@
         </div>
       </div>
 
-            
-           
     
 
       <!-- channel empty -->
 
      <div class="chat-empty">
 
-       <div class="container">
-     {% load el_pagination_tags %}
 
-{% lazy_paginate  posts %}
-{% get_pages %}
-<h1 style="color:black" class="col-lg-7 col-lg-offset-3">{{ pages.previous }}</h1>
-         {% for post in posts %}
+       <div class="container">
+ 
+        <ul>
+         {% if categories %}
+        <ul>
+        {% for categories in category1 %}
+            <li><a href="{{ category1.get_absolute_url }}"></a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+       <a href="{{ category1.get_absolute_url }}"> <p>mhgj</p></a>
+    {% endif %}
+        </ul>
+    <!-- top post -->
+ {% for post in posts2 %}
    
   
 
         <div class="col-lg-7 col-lg-offset-3">
+          <strong><h1 style="color:black">מה חדש?</h1></strong>
             <div class="panel panel-default panel-post">
               <div class="panel-body">
                 <div class="post">
@@ -162,7 +171,7 @@
                       <ul style="text-align:center" class="post-meta">
                         <li><a href="#"><i class="glyphicon glyphicon-user"></i>  {{ post.author }}</a></li>
                         <li><a href="{% url 'post_detail' pk=post.pk %}"><i class="glyphicon glyphicon-comment"></i><span style="text-align:right" class="hidden-xs"><span style="color:white; font-size:1">   ת</span>   {{ post.comments.count }}   תגובות</span></a></li>
-                        <li><i class="glyphicon glyphicon-calendar"> </i> {{ post.published_date }}</li>
+                        <li><i class="glyphicon glyphicon-calendar"> </i> {{ post.published_date }} {{ post.category }}</li>
                         
                       </ul>
                     </div>
@@ -177,7 +186,64 @@
                       
                     </div>
                   </div>
-                  {{ post.text|linebreaksbr|truncatechars:200 }}
+                  {{ post.text|linebreaksbr|truncatechars:275 }}
+                </div>
+              </div>
+              <div class="panel-footer">
+                <ul class="post-action">
+                  <li><a href="#"><i class="fa fa-heart"></i> נקודות:</a></li>
+                  <li><a href="{% url 'post_detail' pk=post.pk %}"><i class="fa fa-comments"></i>תגובות</a></li>
+
+
+                  <li><a href="#"><i class="fa fa-reply"></i> share</a></li>
+                </ul>
+              </div>
+            </div>
+       
+      
+      </div>
+  <!-- end top post -->
+
+
+  {% endfor %}
+     {% load el_pagination_tags %}
+
+{% lazy_paginate posts %}
+{% get_pages %}
+<h1 style="color:black" class="col-lg-7 col-lg-offset-3">{{ pages.previous }}</h1>
+         {% for post in posts %}
+   
+  
+
+        <div class="col-lg-7 col-lg-offset-3">
+                    <strong><h1 style="color:black">מה חדש?</h1></strong>
+
+            <div class="panel panel-default panel-post">
+              <div class="panel-body">
+                <div class="post">
+                  <div class="post-header post-author">
+                    <a href="#" class="author" data-toggle="tooltip" title="YAKUZI"></a>
+                    <div style="padding-left:100px" class="post-title">
+                      <h3 style="text-align:center"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+                      <ul style="text-align:center" class="post-meta">
+                        <li><a href="#"><i class="glyphicon glyphicon-user"></i>  {{ post.author }}</a></li>
+                        <li><a href="{% url 'post_detail' pk=post.pk %}"><i class="glyphicon glyphicon-comment"></i><span style="text-align:right" class="hidden-xs"><span style="color:white; font-size:1">   ת</span>   {{ post.comments.count }}   תגובות</span></a></li>
+                        <li><i class="glyphicon glyphicon-calendar"> </i> {{ post.published_date }} {{ post.category }}</li>
+                        
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="post-carousel" class="carousel slide post-thumbnail" data-ride="carousel">
+                   
+                    <div class="carousel-inner">
+                      <div class="item active">
+                        
+                       
+                      </div>
+                      
+                    </div>
+                  </div>
+                  {{ post.text|linebreaksbr|truncatechars:275 }}
                 </div>
               </div>
               <div class="panel-footer">
@@ -278,8 +344,8 @@
 
   <div class="modal-leave-channel">
     <div class="modal-leave-channel-card">
-      <div style="text-align:right" class="modal-leave-channel-title">?האם אתם בטוחים</div>
-      <div style="text-align:right" class="modal-leave-channel-desc"></div>
+      <div style="text-align:right" class="modal-leave-channel-title">האם אתם בטוחים?</div>
+      <div style="text-align:right" class="modal-leave-channel-desc2">האם ברצונכם לעזוב? </div>
       <div class="modal-leave-channel-separator"></div>
       <div class="modal-leave-channel-bottom">
         <button type="button" class="modal-leave-channel-button modal-leave-channel-close">לא</button>
@@ -294,8 +360,8 @@
       <div class="modal-hide-channel-desc">Do you want to hide this channel?</div>
       <div class="modal-hide-channel-separator"></div>
       <div class="modal-hide-channel-bottom">
-        <button type="button" class="modal-hide-channel-button modal-hide-channel-close">CANCEL</button>
-        <button type="button" class="modal-hide-channel-button modal-hide-channel-submit">YES</button>
+        <button type="button" class="modal-hide-channel-button modal-hide-channel-close">לא</button>
+        <button type="button" class="modal-hide-channel-button modal-hide-channel-submit">כן</button>
       </div>
     </div>
   </div>
@@ -306,8 +372,8 @@
       <div class="modal-confirm-desc">Do you want to hide this channel?</div>
       <div class="modal-confirm-separator"></div>
       <div class="modal-confirm-bottom">
-        <button type="button" class="modal-confirm-button modal-confirm-close">CANCEL</button>
-        <button type="button" class="modal-confirm-button modal-confirm-submit">YES</button>
+        <button type="button" class="modal-confirm-button modal-confirm-close">לא</button>
+        <button type="button" class="modal-confirm-button modal-confirm-submit">כן</button>
       </div>
     </div>
   </div>
@@ -321,8 +387,8 @@
       </div>
       <div class="modal-input-separator"></div>
       <div class="modal-input-bottom">
-        <button type="button" class="modal-input-button modal-input-close">CANCEL</button>
-        <button type="button" class="modal-input-button modal-input-submit">CREATE</button>
+        <button type="button" class="modal-input-button modal-input-close">לא</button>
+        <button type="button" class="modal-input-button modal-input-submit">כן</button>
       </div>
     </div>
   </div>

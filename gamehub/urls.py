@@ -18,13 +18,19 @@ urlpatterns = [
     url(r'^clash$', views.clash, name='clash'),
     url(r'^chat.html$', views.chat, name='chat'),
 
+    #playstation
+    url(r'^play$', views.play, name='play'),
+    url(r'^play.html$', views.chat1, name='chat1'),
+
     #steam
     url(r'^steam$', views.steam, name='steam'),
     url(r'^steam.html$', views.chat2, name='chat2'),
 
-    #playstation
-    url(r'^play$', views.play, name='play'),
-    url(r'^play.html$', views.chat1, name='chat1'),
+    #xbox
+    url(r'^xbox$', views.xbox, name='xbox'),
+    url(r'^xbox.html$', views.chat3, name='chat3'),
+
+    
 
     #General
     url(r'^login/$', auth_views.login, name='login'),

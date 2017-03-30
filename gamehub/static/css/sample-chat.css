@@ -1170,7 +1170,8 @@ label.chat-input-file.file-upload {
   padding: 0 20px;
 }
 
-.modal-leave-channel-desc, .modal-hide-channel-desc, .modal-confirm-desc, .modal-input-desc {
+
+.modal-leave-channel-desc2, .modal-hide-channel-desc, .modal-confirm-desc {
   font-family: 'Lato';
   font-weight: 400;
   font-size: 14px;
@@ -1178,6 +1179,7 @@ label.chat-input-file.file-upload {
   margin-top: 10px;
   padding: 0 20px;
 }
+
 
 .modal-leave-channel-separator, .modal-hide-channel-seprator, .modal-confirm-seprator, .modal-input-separator {
   padding-top: 14px;
