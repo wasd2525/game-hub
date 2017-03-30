@@ -33,24 +33,32 @@
           <!--<img src="/static/img/logo_landing.svg">-->
          
         </div>
-        <div class="text-sort text-sort--left">
-          <label style="margin-left:100px" class="index-title">The Game Hub</label>
-        </div>
+        
+          <h1 style="text-align:center; color:white" class="title">The Game Hub</h1>
+       
       </div>
 
       <!-- user info -->
    {% block content %}
   <form method="post">
-   
+   <div style="margin-top:30px; margin-left:21%" class="col-lg-7">
+            <div class="panel panel-default panel-post">
+              <div style="margin-left: 40px; margin-right: 20px">
+                
+                  <center><h2 style="margin-top:25px;margin-bottom:40px">!התחברו עכשיו</h2></center>
+                    <form style="margin-top:25px; width:100%" class="form-control">{% csrf_token %}
+                      <h4>{{ form.as_p }}</h4>
+              <center><button style="width:50%; height:40px; background-color:#5299f5; color:white; margin-bottom:20px; margin-top:20px;" type="submit" class="btn">התחבר</button></center>
+            </form>
+            <div style="text-align:center; margin-bottom:20px" class="">
+                !אין לכם משתמש? <a href="/register">התחל עכשיו</a>
+            </div>
+    {% endblock %}
+    </div>
+      
+      </div></div>
 
-      <div class="index-section index-input">
-      	 {% csrf_token %}
-   
- 
-        <h2 style="text-align:center; font-family: 'Lobster';" class="" placeholder="dasd">{{ form.as_p }}</h2>
-        
-        <button type="submit" class="index-button" id="btn_start">התחל</button>
-      </div>
+     
 
       <!-- description -->
       <div class="index-section index-text">
@@ -73,4 +81,4 @@
 
 </body>
 </html>
-{% endblock %}
+

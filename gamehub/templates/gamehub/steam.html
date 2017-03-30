@@ -78,13 +78,15 @@
 
 
 
-      <div style="margin-top:-80" class="left-nav-channel-select">
+    <div style="postition:fixed" class="left-nav-user">
+      <div style="margin-top:-80" class="left-nav-channel-select2">
         <a href="/logout">
         <button style="padding-right: 12px" type="button" data-toggle="modal" data-target=".bs-modal-sm" class="left-nav-button left-nav-logout">
           יציאה
           
         </button>
         </a>
+      </div>
       
         
 
@@ -106,9 +108,9 @@
       <!-- modal-bg -->
       <div class="right-section__modal-bg"></div>
 
-      <!-- top -->
+     <!-- top -->
       <div class="chat-top">
-        <a href="{% url 'post_new' %}"> <button style="background-color:#5299f5; color:white;padding:13px 20px; font-size:17px" type="button" class="btn">
+        <a href="{% url 'post_new' %}"> <button style="background-color:#5299f5; color:white;padding:13px 20px;width:75px; margin-right:10px;font-size:17px" type="button" class="btn">
   <span class="glyphicon glyphicon-floppy-open" aria-hidden="true"></span>
 </button></a>
 
@@ -132,10 +134,7 @@
 
         </div>
       </div>
-
-            
            
-    
 
       <!-- channel empty -->
 

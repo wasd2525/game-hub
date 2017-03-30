@@ -1,5 +1,5 @@
 
-var appId = 'A25013B5-5675-440A-9A4F-86E8AF87F698';
+var appId = 'C99DC094-A161-4479-8609-F326A4984F4A';
 var currScrollHeight = 0;
 var MESSAGE_TEXT_HEIGHT = 27;
 
@@ -1572,7 +1572,7 @@ function setWelcomeMessage(name) {
   $('.chat-canvas').append(
     '<div class="chat-canvas__list-notice">' +
     '  <label class="chat-canvas__list-system">' +
-    'ברוכים הבאים ל{}!'.format(name) +
+    'Welcome to {}!'.format(name) +
     '  </label>' +
     '</div>'
   );

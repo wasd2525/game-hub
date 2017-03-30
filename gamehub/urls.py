@@ -10,6 +10,7 @@ urlpatterns = [
 	url(r'^register/$', CreateView.as_view(
             template_name='register.html',
             form_class=UserCreationForm,
+            
             success_url='/'
     )),
     url(r'^accounts/', include('django.contrib.auth.urls')),
@@ -36,6 +37,8 @@ urlpatterns = [
     url(r'^login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
     url(r'^$', views.home, name='home'),
+
+    #url(r'^like/$', views.like_count_blog, name='like_count_blog'),
 
     url(r'^post/(?P<pk>\d+)/comment/$', views.add_comment_to_post, name='add_comment_to_post'),
 

@@ -14,6 +14,11 @@ class Post(models.Model):
     published_date = models.DateTimeField(
             blank=True, null=True)
 
+    """likes = models.PositiveIntegerField(default=0)
+
+    @property
+    def total_likes(self):
+        return self.likes.count()"""
 
     def __str__(self):
         return self.catTitle

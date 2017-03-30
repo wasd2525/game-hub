@@ -1572,7 +1572,7 @@ function setWelcomeMessage(name) {
   $('.chat-canvas').append(
     '<div class="chat-canvas__list-notice">' +
     '  <label class="chat-canvas__list-system">' +
-    'Welcome to {}!'.format(name) +
+    'ברוכים הבאים ל{}!'.format(name) +
     '  </label>' +
     '</div>'
   );

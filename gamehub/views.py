@@ -26,13 +26,17 @@ def chat(request):
     posts = Post.objects.filter(category=1)
     posts2 = Post.objects.filter(slug="Slug1")
     username = '/chat.html?userid=&nickname=' + request.user.username
-    
+    post_id = post.pk
+    """liked = False
+    if request.session.get('has_liked_'+str(post_id), liked):
+        liked = True
+        print("liked {}_{}".format(liked, post_id))"""
   
 
     return render(request, 'gamehub/chat.html', {
         'posts' : posts,
         'posts2' : posts2,
-        
+        #'liked': liked,
     })
 
    #end clash
@@ -180,6 +184,32 @@ def pagination_ajax(request, pk=None):
                 'pk': page.next_page_pk()}
 
     return HttpResponse(json.dumps(data), content_type="application/json")
+
+
+#like button
+"""def like_count_blog(request):
+    liked = False
+    if request.method == 'GET':
+        post_id = request.GET['post_id']
+        post = Post.objects.get(id=int(post_id))
+        if request.session.get('has_liked_'+post_id, liked):
+            print("unlike")
+            if post.likes > 0:
+                likes = post.likes - 1
+                try:
+                    del request.session['has_liked_'+post_id]
+                except KeyError:
+                    print("keyerror")
+        else:
+            print("like")
+            request.session['has_liked_'+post_id] = True
+            likes = post.likes + 1
+    post.likes = likes
+    post.save()
+    return HttpResponse(likes, liked)"""
+
+
+
 
 
 

@@ -105,6 +105,13 @@ input, button, textarea {
   
 }
 
+.left-nav-channel-select2 {
+  padding: 20px 14px 0 14px;
+  height: 100px;
+  background: #463c66;
+  
+}
+
 .left-nav-button-guide {
   width: 36px;
   height: 36px;
