@@ -21,7 +21,7 @@ def clash(request):
 @login_required(login_url='login')
 def chat(request):
     categories = Category.objects.all(),
-    posts = Post.objects.filter(category=1, published_date__lte=timezone.now()).order_by('published_date')
+    posts = Post.objects.filter(category=1, published_date__lte=timezone.now()).order_by('-published_date')
     posts2 = Post.objects.filter(slug="Slug1")
     username = '/chat.html?userid=&nickname=' + request.user.username
 
@@ -72,7 +72,7 @@ def play(request):
 @login_required(login_url='login')
 def chat1(request):
     categories = Category.objects.all(),
-    posts = Post.objects.filter(category=3)
+    posts = Post.objects.filter(category=3, published_date__lte=timezone.now()).order_by('-published_date')
     posts2 = Post.objects.filter(slug="Slug1")
     username = '/play.html?userid=&nickname=' + request.user.username
     
@@ -99,7 +99,7 @@ def xbox(request):
 @login_required(login_url='login')
 def chat3(request):
     categories = Category.objects.all(),
-    posts = Post.objects.filter(category=4)
+    posts = Post.objects.filter(category=4, published_date__lte=timezone.now()).order_by('-published_date')
     posts2 = Post.objects.filter(slug="Slug1")
     username = '/xbox.html?userid=&nickname=' + request.user.username
 
@@ -124,7 +124,7 @@ def steam(request):
 @login_required(login_url='login')
 def chat2(request):
     categories = Category.objects.all(),
-    posts = Post.objects.filter(category=5)
+    posts = Post.objects.filter(category=5, published_date__lte=timezone.now()).order_by('-published_date')
     posts2 = Post.objects.filter(slug="Slug1")
     username = '/chat.html?userid=&nickname=' + request.user.username
 
