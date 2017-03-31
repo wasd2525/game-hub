@@ -26,7 +26,7 @@ SECRET_KEY = '5e%x*pp=i+yz369$e@p=&its=d$dt6a*w4^%w6v#j^668q8b2s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com', 'www.gamekal.com']
 
 
 # Application definition
