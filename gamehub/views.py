@@ -25,6 +25,8 @@ def chat(request):
     posts2 = Post.objects.filter(slug="Slug1")
     username = '/chat.html?userid=&nickname=' + request.user.username
 
+
+
     return render(request, 'gamehub/chat.html', {
         'posts' : posts,
         'posts2' : posts2,
