@@ -24,12 +24,6 @@ def chat(request):
     posts = Post.objects.filter(category=1, published_date__lte=timezone.now()).order_by('published_date')
     posts2 = Post.objects.filter(slug="Slug1")
     username = '/chat.html?userid=&nickname=' + request.user.username
-    """post_id = post.pk
-    liked = False
-    if request.session.get('has_liked_'+str(post_id), liked):
-        liked = True
-        print("liked {}_{}".format(liked, post_id))"""
-  
 
     return render(request, 'gamehub/chat.html', {
         'posts' : posts,
