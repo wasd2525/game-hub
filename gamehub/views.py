@@ -11,8 +11,6 @@ from django.shortcuts import render, get_object_or_404
 
 
 
-
-
 #clash
 @login_required(login_url='login')
 def clash(request):
