@@ -48,16 +48,16 @@
 
   <div class="sample-body">
 
-    <!-- left nav -->
+        <!-- left nav -->
     <div style="float:right; position:fixed" class="left-nav">
       <a href="/" target="_top"><h1 style="text-align: center; font-family: Lobster">GameKal</h1></a>
       <div class="left-nav-channel-select">
-        <button style="padding-right:10px" type="button" class="left-nav-button left-nav-open" id="btn_open_chat">
-          כניסה לסרבר
+        <button style="padding-right:10px; margin-right:-5px" type="button" class="left-nav-button left-nav-open buttonAnim" id="btn_open_chat">
+          <span>כניסה לסרבר!</span>
           <div class="left-nav-button-guide"></div>
         </button>
-        <button style="padding-right:10px" type="button" class="left-nav-button left-nav-messaging" id="btn_messaging_chat">
-          עשה סרבר משלך
+        <button style="padding-right:10px; margin-right:-5px" type="button" class="left-nav-button left-nav-messaging buttonAnim" id="btn_messaging_chat">
+          <span>עשה סרבר משלך</span>
           <div class="left-nav-button-guide"></div>
         </button>
     
@@ -67,7 +67,7 @@
       
 
         <div class="left-nav-channel-section">
-        <div style="text-align:right; font-size:15px" class="left-nav-channel-title">פתיחת צ'אט</div>
+        <div style="text-align:right; font-size:15px" class="left-nav-channel-title ">פתיחת צ'אט</div>
         <div style="text-align:right; padding-right: 10px" class="left-nav-channel-empty">התחל כדי לפתוח<br>חדר צ'אט</div>
         <div style="text-align:left" id="open_channel_list"></div>
 
@@ -77,17 +77,15 @@
       </div>
 
 
-
-    <div style="postition:fixed" class="left-nav-user">
-      <div style="margin-top:-80" class="left-nav-channel-select2">
+<div style="postition:fixed" class="left-nav-user">
+      <div style="margin-top:-80; margin-right:-10px" class="left-nav-channel-select2">
         <a href="/logout">
-        <button style="padding-right: 12px" type="button" data-toggle="modal" data-target=".bs-modal-sm" class="left-nav-button left-nav-logout">
-          יציאה
+        <button style="padding-right: 12px" type="button" data-toggle="modal" data-target=".bs-modal-sm" class="left-nav-button left-nav-logout buttonAnim">
+          <span>יציאה</span>
           
         </button>
         </a>
       </div>
-      
         
 
       </div>
