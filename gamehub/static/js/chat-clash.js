@@ -501,7 +501,7 @@ function userClick(obj) {
   if (selectCount > 1) {
     $('.modal-messaging-top__title').html('Group Chat ({})'.format(selectCount));
   } else {
-    $('.modal-messaging-top__title').html('Group Channel');
+    $('.modal-messaging-top__title').html('שיחה');
   }
 }
 
@@ -906,7 +906,7 @@ function joinGroupChannel(channelUrl, callback) {
 
     isOpenChat = false;
     loadMoreChatMessage(scrollPositionBottom);
-    setWelcomeMessage('Group Channel');
+    setWelcomeMessage('שיחה');
     addGroupChannel(isGroup, channelMemberList, currChannelInfo);
     $('.chat-input-text__field').attr('disabled', false);
     
