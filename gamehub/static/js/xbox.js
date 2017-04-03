@@ -501,7 +501,7 @@ function userClick(obj) {
   if (selectCount > 1) {
     $('.modal-messaging-top__title').html('Group Chat ({})'.format(selectCount));
   } else {
-    $('.modal-messaging-top__title').html('Group Channel');
+    $('.modal-messaging-top__title').html('שיחה');
   }
 }
 
@@ -906,7 +906,7 @@ function joinGroupChannel(channelUrl, callback) {
 
     isOpenChat = false;
     loadMoreChatMessage(scrollPositionBottom);
-    setWelcomeMessage('Group Channel');
+    setWelcomeMessage('שיחה');
     addGroupChannel(isGroup, channelMemberList, currChannelInfo);
     $('.chat-input-text__field').attr('disabled', false);
     
@@ -1572,7 +1572,7 @@ function setWelcomeMessage(name) {
   $('.chat-canvas').append(
     '<div class="chat-canvas__list-notice">' +
     '  <label class="chat-canvas__list-system">' +
-    'Welcome to {}!'.format(name) +
+    'ברוכים הבאים ל{}!'.format(name) +
     '  </label>' +
     '</div>'
   );
