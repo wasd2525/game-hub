@@ -8,10 +8,7 @@ input, button, textarea {
 
 }
 
-@font-face {
-    font-family: Var;
-    src: url("{% static 'fonts/VarelaRound-Regular.ttf' %}") /* EOT file for IE */
-}
+
 
 .buttonAnim {
   border-radius: 4px;
@@ -25,6 +22,7 @@ input, button, textarea {
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+  font-family: 'Varela Round';
 }
 
 .buttonAnim span {
@@ -32,6 +30,7 @@ input, button, textarea {
   display: inline-block;
   position: relative;
   transition: 0.5s;
+  font-family: 'Varela Round';
 }
 
 .buttonAnim span:after {
@@ -232,7 +231,7 @@ input, button, textarea {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 500;
   font-size: 14px;
   color: #7f6da0;
@@ -243,7 +242,7 @@ input, button, textarea {
 .left-nav-channel-title {
   width: 100%;
   height: 30px;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 500;
   font-size: 11px;
   color: #7f6da0;
@@ -391,6 +390,7 @@ input, button, textarea {
   font-weight: 500;
   color: #7f6da0;
   margin-left: 10px;
+  font-family: 'Varela Round';
 }
 
 .left-nav-user-nickname {
