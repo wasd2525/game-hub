@@ -219,6 +219,7 @@ input, button, textarea {
   height: calc(100% - 240px);
   margin-top: 18px;
   overflow-y: auto;
+  font-family: 'Varela Round';
 
 }
 
