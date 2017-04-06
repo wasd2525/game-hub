@@ -49,16 +49,16 @@
 
   <div class="sample-body">
 
-        <!-- left nav -->
+  <!-- left nav -->
     <div style="float:right; position:fixed" class="left-nav">
       <a href="/" target="_top"><h1 style="text-align: center; font-family: Lobster">GameKal</h1></a>
       <div class="left-nav-channel-select">
         <button style="padding-right:10px; margin-right:-5px" type="button" class="left-nav-button left-nav-open buttonAnim" id="btn_open_chat">
-          <span>כניסה לסרבר!</span>
+          <span style="font-family: Varela Round">כניסה לסרבר!</span>
           <div class="left-nav-button-guide"></div>
         </button>
         <button style="padding-right:10px; margin-right:-5px" type="button" class="left-nav-button left-nav-messaging buttonAnim" id="btn_messaging_chat">
-          <span>עשה סרבר משלך</span>
+          <span style="font-family: Varela Round">עשה סרבר משלך</span>
           <div class="left-nav-button-guide"></div>
         </button>
     
@@ -68,11 +68,11 @@
       
 
         <div class="left-nav-channel-section">
-        <div style="text-align:right; font-size:15px" class="left-nav-channel-title ">פתיחת צ'אט</div>
-        <div style="text-align:right; padding-right: 10px" class="left-nav-channel-empty">התחל כדי לפתוח<br>חדר צ'אט</div>
+        <div style="text-align:right; font-size:15px; font-family: Varela Round" class="left-nav-channel-title ">פתיחת צ'אט</div>
+        <div style="text-align:right; padding-right: 10px; font-family: Varela Round" class="left-nav-channel-empty">התחל כדי לפתוח<br>חדר צ'אט</div>
         <div style="text-align:left" id="open_channel_list"></div>
 
-        <div style="text-align:right; font-size:15px" class="left-nav-channel-title title-messaging">צ'אט קבוצתי</div>
+        <div style="text-align:right; font-size:15px; font-family: Varela Round"class="left-nav-channel-title title-messaging">צ'אט קבוצתי</div>
         <div id="messaging_channel_list"></div>
 
       </div>
@@ -82,7 +82,7 @@
       <div style="margin-top:-80; margin-right:-10px" class="left-nav-channel-select2">
         <a href="/logout">
         <button style="padding-right: 12px" type="button" data-toggle="modal" data-target=".bs-modal-sm" class="left-nav-button left-nav-logout buttonAnim">
-          <span>יציאה</span>
+          <span style="font-family: Varela Round">יציאה</span>
           
         </button>
         </a>
@@ -93,7 +93,7 @@
       <div style="postition:fixed" class="left-nav-user">
         <div class="left-nav-user left-nav-user-icon"></div>
         <div class="left-nav-user left-nav-login-user">
-          <div class="left-nav-user left-nav-user-title">משתמש</div>
+          <div style="font-family: Varela Round" class="left-nav-user left-nav-user-title">משתמש</div>
           <div class="left-nav-user left-nav-user-nickname"></div>
           
         </div>
@@ -107,7 +107,7 @@
       <!-- modal-bg -->
       <div class="right-section__modal-bg"></div>
 
-     <!-- top -->
+      <!-- top -->
       <div class="chat-top">
         <a href="{% url 'post_new' %}"> <button style="background-color:#5299f5; color:white;padding:13px 20px;width:75px; margin-right:10px;font-size:17px" type="button" class="btn">
   <span class="glyphicon glyphicon-floppy-open" aria-hidden="true"></span>
@@ -133,7 +133,6 @@
 
         </div>
       </div>
-           
     
 
       <!-- channel empty -->
