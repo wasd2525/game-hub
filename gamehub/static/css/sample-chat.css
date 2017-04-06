@@ -8,6 +8,11 @@ input, button, textarea {
 
 }
 
+@font-face {
+    font-family: Var;
+    src: url("{% static 'fonts/VarelaRound-Regular.ttf' %}") /* EOT file for IE */
+}
+
 .buttonAnim {
   border-radius: 4px;
   background-color: #f4511e;
