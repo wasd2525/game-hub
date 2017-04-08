@@ -256,7 +256,7 @@ input, button, textarea {
 
 .left-nav-channel {
   width: 100%;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 500;
   font-size: 16px;
   color: #a08dce;
@@ -355,7 +355,7 @@ input, button, textarea {
   -moz-border-radius: 6px;
   border-radius: 6px;
   background: #f5429c;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 400;
   font-size: 11px;
   color: #fff;
@@ -371,7 +371,7 @@ input, button, textarea {
   position: absolute;
   bottom: 0;
   background: #463c66;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   margin-left: 1px;
 }
 
@@ -441,7 +441,7 @@ input, button, textarea {
   display: none;
   padding-left: 20px;
   background: url("../img/icon-openchat-title.svg") no-repeat left center;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 500;
   font-size: 18px;
   color: #4f398f;
@@ -605,7 +605,7 @@ input, button, textarea {
   width: 100%;
   min-height: 24px;
   background: transparent;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 400;
   font-size: 16px;
   color: #60768b;
@@ -627,7 +627,7 @@ input, button, textarea {
   height: 32px;
   min-height: 24px;
   background: transparent;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 400;
   font-size: 16px;
   color: #60768b;
@@ -759,11 +759,12 @@ label.chat-input-file.file-upload {
   width: calc(100% - 40px);
   height: 40px;
   float: left;
+  font-family: 'Varela Round';
 }
 
 .chat-input-typing {
   display: none;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 400;
   font-style: italic;
   font-size: 11px;
@@ -789,7 +790,6 @@ label.chat-input-file.file-upload {
   height: 40px;
   min-height: 40px;
   max-height: 40px;
-  font-family: 'Lato';
   font-weight: 400;
   font-size: 14px;
   color: #8f9fae;
@@ -803,6 +803,8 @@ label.chat-input-file.file-upload {
   -webkit-border-bottom-right-radius: 2px;
   border-bottom-right-radius: 2px;
   background: #f7f8fc;
+  font-family: 'Varela Round';
+
 }
 
 .chat-input-text__field:focus {
@@ -824,14 +826,14 @@ label.chat-input-file.file-upload {
 }
 
 .modal-guide-create__title {
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 500;
   font-size: 16px;
   color: #32c5e6;
 }
 
 .modal-guide-create__desc {
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 400;
   font-size: 14px;
   color: #fff;
@@ -866,7 +868,7 @@ label.chat-input-file.file-upload {
   right: 235px;
   border: 0;
   background: url("../img/img-leave.svg") no-repeat center center transparent;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 500;
   font-size: 14px;
   color: #fff;
@@ -887,7 +889,7 @@ label.chat-input-file.file-upload {
   right: 240px;
   border: 0;
   background: url("../img/img-current.svg") no-repeat center center transparent;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 500;
   font-size: 12px;
   color: #fff;
@@ -911,7 +913,7 @@ label.chat-input-file.file-upload {
   right: 270px;
   border: 0;
   background: url("../img/img-member.svg") no-repeat center center transparent;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 500;
   font-size: 14px;
   color: #fff;
@@ -948,7 +950,7 @@ label.chat-input-file.file-upload {
   height: 32px;
   padding: 0 34px 0 12px;
   background: url("../img/icon-search.svg") no-repeat 220px center #fff;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 400;
   font-size: 14px;
   color: #abb8c4;
@@ -979,7 +981,7 @@ label.chat-input-file.file-upload {
   width: 100%;
   height: 36px;
   background: 20px center transparent;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 400;
   font-size: 16px;
   color: #60768b;
@@ -1005,7 +1007,7 @@ label.chat-input-file.file-upload {
   width: 100%;
   height: 72px;
   border-top: 1px solid rgba(171, 184, 196, 0.5);
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 400;
   font-size: 14px;
   color: #60678b;
@@ -1033,7 +1035,7 @@ label.chat-input-file.file-upload {
   width: 270px;
   height: 46px;
   margin: auto;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 400;
   font-size: 14px;
   color: #60678b;
@@ -1063,7 +1065,7 @@ label.chat-input-file.file-upload {
   width: 100%;
   min-height: 48px;
   padding: 16px 20px 0 20px;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 500;
   border-bottom: 1px solid rgba(171, 184, 196, 0.5);
 }
@@ -1103,7 +1105,7 @@ label.chat-input-file.file-upload {
   height: 36px;
   padding: 0 20px 0 50px;
   background: url("../img/icon-userlist.svg") no-repeat 20px center #fff;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 400;
   font-size: 16px;
   color: #60768b;
@@ -1133,7 +1135,7 @@ label.chat-input-file.file-upload {
 .modal-messaging-more {
   width: 100%;
   height: 46px;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 400;
   font-size: 14px;
   color: #60678b;
@@ -1214,7 +1216,7 @@ label.chat-input-file.file-upload {
 }
 
 .modal-leave-channel-title, .modal-hide-channel-title, .modal-confirm-title, .modal-input-title {
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 600;
   font-size: 18px;
   color: #333e4a;
@@ -1224,7 +1226,7 @@ label.chat-input-file.file-upload {
 
 
 .modal-confirm-title2 {
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 600;
   font-size: 24px;
   color: #333e4a;
@@ -1235,7 +1237,7 @@ label.chat-input-file.file-upload {
 
 
 .modal-leave-channel-desc2, .modal-hide-channel-desc, .modal-confirm-desc {
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 400;
   font-size: 14px;
   color: #60768b;
@@ -1347,7 +1349,7 @@ label.chat-input-file.file-upload {
 .modal-member-list {
   width: 100%;
   height: 340px;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 500;
   font-size: 14px;
   color: #60768b;
@@ -1418,7 +1420,7 @@ label.chat-input-file.file-upload {
   width: 100%;
   height: 80px;
   padding: 16px 20px;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 500;
 }
 .modal-invite-top__title {
@@ -1436,7 +1438,7 @@ label.chat-input-file.file-upload {
 .modal-invite-list {
   width: 100%;
   height: 234px;
-  font-family: 'Lato';
+  font-family: 'Varela Round';
   font-weight: 500;
   font-size: 14px;
   color: #60768b;

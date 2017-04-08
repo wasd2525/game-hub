@@ -1,7 +1,7 @@
 {% load staticfiles %}
 
 
-<html lang="he">
+<html lang="he" dir="rtl">
 <head>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -183,7 +183,7 @@
                       
                     </div>
                   </div>
-                  {{ post.text|linebreaksbr|truncatechars:275 }}
+                  <span style="font-family:Varela Round">{{ post.text|linebreaksbr|truncatechars:275 }}</span>
                 </div>
               </div>
               <div class="panel-footer">
@@ -251,8 +251,7 @@
                       
                     </div>
                   </div>
-                  {{ post.text|linebreaksbr|truncatechars:275 }}
-                </div>
+                  <span style="font-family:Varela Round">{{ post.text|linebreaksbr|truncatechars:275 }}</span>                </div>
               </div>
               <div class="panel-footer">
                 <ul class="post-action">
