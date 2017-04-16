@@ -168,7 +168,7 @@
                       <ul style="text-align:center" class="post-meta">
                         <li><a href="#"><i class="glyphicon glyphicon-user"></i>  {{ post.author }}</a></li>
                         <li><a href="{% url 'post_detail' pk=post.pk %}"><i class="glyphicon glyphicon-comment"></i><span style="text-align:right" class="hidden-xs"><span style="color:white; font-size:1">   ת</span>   {{ post.comments.count }}   תגובות</span></a></li>
-                        <li><i class="glyphicon glyphicon-calendar"> </i> {{ post.published_date }} {{ post.category }}</li>
+                        <li><i class="glyphicon glyphicon-calendar"> </i> {{ post.published_date }}</li>
                         
                       </ul>
                     </div>
@@ -183,7 +183,7 @@
                       
                     </div>
                   </div>
-                  <span style="font-family:Varela Round">{{ post.text|linebreaksbr|truncatechars:275 }}</span>
+                  <span style="font-family:Varela Round; float:right; margin-bottom:20px">{{ post.text|linebreaksbr|truncatechars:275 }}</span>
                 </div>
               </div>
               <div class="panel-footer">
@@ -251,7 +251,7 @@
                       
                     </div>
                   </div>
-                  <span style="font-family:Varela Round">{{ post.text|linebreaksbr|truncatechars:275 }}</span>                </div>
+                  <span style="font-family:Varela Round; float:right; margin-bottom:20px">{{ post.text|linebreaksbr|truncatechars:275 }}</span>                </div>
               </div>
               <div class="panel-footer">
                 <ul class="post-action">

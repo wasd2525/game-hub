@@ -21,6 +21,7 @@
 
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 
 <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
@@ -78,7 +79,7 @@
                     </div>
                   </div>
 
-                  <p>{{ post.text|linebreaksbr }}</p>
+                  <p style="font-family:Varela Round; float:right; margin-bottom:20px">{{ post.text|linebreaksbr }}</p>
                 </div>
               </div>
               <div class="panel-footer">
@@ -96,7 +97,6 @@
    <div class="like_count_blog" id="heart-counter">{{ post.likes }}</div>
 </div></a></li> -->
                   <li><a href="#"><i class="glyphicon glyphicon-comments"></i>תגובות</a></li>
-                  <li><a href="#"><i class="glyphicon glyphicon-reply"></i> share</a></li>
                 </ul>
               </div>
 
@@ -123,7 +123,7 @@
               <div class="panel-body">
 
                 <div class="post">
-                  <h2 style="text-align:center;margin-bottom:-12">:תגובות</h2>
+                  <h2 style="text-align:center;margin-bottom:-12">תגובות:</h2>
                       </div>
                        <hr>
 
@@ -132,11 +132,11 @@
 {% paginate post.comments.all as comment %}
 {% for comment in comment %}
     <div style="margin-left:-2px;" class="comment">
-        <strong>{{ comment.author }}:</strong>
-        <p>{{ comment.text|linebreaks }}</p>
+        <strong style="font-family:Varela Round">{{ comment.author }}:</strong>
+        <p style="font-family:Varela Round">{{ comment.text|linebreaks }}</p>
     </div>
 {% empty %}
-    <p>:אין תגובות כרגע</p>
+    <p style="font-family:Varela Round">:אין תגובות כרגע</p>
     <br>
     <br>
     <br>
