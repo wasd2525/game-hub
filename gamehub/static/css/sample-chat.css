@@ -1306,13 +1306,14 @@ label.chat-input-file.file-upload {
 }
 
 
-.modal-leave-channel-desc2, .modal-hide-channel-desc, .modal-confirm-desc {
+.modal-leave-channel-desc2, .modal-hide-channel-desc, .modal-confirm-desc2 {
   font-family: 'Varela Round';
   font-weight: 400;
   font-size: 14px;
   color: #60768b;
   margin-top: 10px;
   padding: 0 20px;
+  margin-right: 5px;
 }
 
 
