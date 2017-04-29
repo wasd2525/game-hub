@@ -44,7 +44,8 @@
   <title>GameKal - Playstation</title>
   
 </head>
-<body>
+<body onload="myFunction()">
+  <div id="loader"></div>
   <div class="init-check"></div>
 
   <div class="sample-body">
@@ -188,7 +189,7 @@
                       
                     </div>
                   </div>
-                  <span style="font-family:Varela Round">{{ post.text|linebreaksbr|truncatechars:275 }}</span>
+                  <span style="font-family:Varela Round; float:right; margin-bottom:20px; text-align:right">{{ post.text|linebreaksbr|truncatechars:275 }}</span>
                 </div>
               </div>
               <div class="panel-footer">
@@ -360,6 +361,17 @@
   <script src="static/js/jquery-1.11.3.min.js"></script>
   <script src="static/js/util.js"></script>
   <script src="static/js/chat-playstation.js"></script>
+<script>
+var myVar;
 
+function myFunction() {
+    myVar = setTimeout(showPage, 1750);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
 </body>
 </html>
