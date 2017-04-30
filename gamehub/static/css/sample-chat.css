@@ -9,9 +9,9 @@ input, button, textarea {
 }
 
 
-/*img:hover {
-    -webkit-filter: blur(3px); 
-    filter: blur(3px);
+img:hover {
+    -webkit-filter: blur(1px); 
+    filter: blur(1px);
     transition: .3s ease;
     
   
@@ -20,7 +20,7 @@ input, button, textarea {
 img {
 
   transition: .2s ease;
-}*/
+}
 
 #loader {
   position: absolute;
