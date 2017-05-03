@@ -492,7 +492,7 @@ img {
   height: 100%;
   z-index: 1;
   background: rgba(0, 0, 0, 0.7);
-  position: absolute;
+  position: fixed;
 }
 
 .chat-top {
@@ -999,7 +999,7 @@ label.chat-input-file.file-upload {
   display: none;
   width: 300px;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   background: #fff;
   top: 0;
   right: 220px;
@@ -1112,6 +1112,10 @@ label.chat-input-file.file-upload {
   cursor: pointer;
 }
 
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 .modal-open-chat-more:hover > .modal-open-chat-more__text,
 .modal-open-chat-more:focus > .modal-open-chat-more__text {
   color: #32c5e6;
@@ -1122,7 +1126,7 @@ label.chat-input-file.file-upload {
   display: none;
   width: 300px;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   background: #fff;
   top: 0;
   right: 220px;
