@@ -23,7 +23,7 @@ img {
 }
 
 #loader {
-  position: absolute;
+  position: fixed;
   left: 47%;
   top: 50%;
   z-index: 1;
@@ -170,7 +170,7 @@ img {
 
 .init-check {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
