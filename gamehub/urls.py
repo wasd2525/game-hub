@@ -38,6 +38,8 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
     url(r'^$', views.home, name='home'),
 
+    url(r'^tinymce/', include('tinymce.urls')),
+
     #url(r'^like/$', views.like_count_blog, name='like_count_blog'),
 
     url(r'^post/(?P<pk>\d+)/comment/$', views.add_comment_to_post, name='add_comment_to_post'),
