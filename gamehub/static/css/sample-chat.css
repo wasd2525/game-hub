@@ -8,6 +8,11 @@ input, button, textarea {
 
 }
 
+#id_text {
+
+  width: 100%;
+}
+
 
 img:hover {
     -webkit-filter: blur(1px); 
