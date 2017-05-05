@@ -1,13 +1,10 @@
 from django.db import models
 from django.utils import timezone
-from django.db import models
-from tinymce.models import HTMLField
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
-    text = HTMLField()
-
+    text = models.TextField()
     image = models.ImageField(upload_to = 'static/img',blank=True, null=True)
     category = models.ForeignKey('gamehub.Category', null=True)
     slug = models.SlugField(max_length=100, db_index=True, default="Slug")
