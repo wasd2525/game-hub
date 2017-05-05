@@ -14,13 +14,13 @@ textarea {
 }
 
 
-img:hover {
+/*img:hover {
     -webkit-filter: blur(1px); 
     filter: blur(1px);
     transition: .3s ease;
     
   
-}
+}*/
 
 img {
 
